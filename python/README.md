@@ -1,3 +1,5 @@
+## using venv
+
 python3 -m venv venv
 . venv/bin/activate
 
@@ -21,3 +23,7 @@ like string but also accepts slashes
 
 uuid
 accepts UUID strings
+
+### Ensure pip, setuptools, and wheel are up to date
+
+python3 -m pip install --upgrade pip setuptools wheel
