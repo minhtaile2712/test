@@ -1,10 +1,7 @@
-const Thing1 = require("./thing1");
+console.log("hello from module2");
 
-Thing1.b = 324;
-
-function func2() {
-  console.log(Thing1.a);
-  console.log(Thing1.b);
+function sayHello() {
+  console.log("module2 said: hello from module2");
 }
 
-module.exports = func2;
+module.exports = sayHello;
