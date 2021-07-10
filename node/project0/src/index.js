@@ -1,19 +1,13 @@
-const msPerFrame = 7;
-const accumulatedTime = 30;
-let inter =
-  // accumulatedTime - Math.floor(accumulatedTime / msPerFrame) * msPerFrame;
-  accumulatedTime % msPerFrame;
+const express = require("express");
+const app = express();
 
-let currentFrameCompletion = inter / msPerFrame;
-const framesToCatchUp = Math.floor(accumulatedTime / msPerFrame);
+app.get("/", (req, res) => {
+  const query = req.query;
+  console.log(query);
+  res.send(query);
+});
 
-console.log("msPerFrame", msPerFrame);
-console.log("accumulatedTime", accumulatedTime);
-console.log("inter", inter);
-console.log("currentFrameCompletion", currentFrameCompletion);
-console.log("framesToCatchUp", framesToCatchUp);
-console.log(accumulatedTime / msPerFrame);
-
-let a = accumulatedTime / msPerFrame;
-console.log(a - Math.floor(a));
-console.log((accumulatedTime % msPerFrame) / msPerFrame);
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log("app is listening on port", PORT);
+});
