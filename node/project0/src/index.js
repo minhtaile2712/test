@@ -1,13 +1,17 @@
-const express = require("express");
-const app = express();
-
-app.get("/", (req, res) => {
-  const query = req.query;
-  console.log(query);
-  res.send(query);
-});
-
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log("app is listening on port", PORT);
-});
+function connect(url, options, callback) {
+  if (typeof options === "function") (callback = options), (options = {});
+  options = options !== null && options !== void 0 ? options : {};
+  try {
+    // Create client
+    const mongoClient = new MongoClient(url, options);
+    // Execute the connect method
+    if (callback) {
+      return mongoClient.connect(callback);
+    } else {
+      return mongoClient.connect();
+    }
+  } catch (error) {
+    if (callback) return callback(error);
+    else return promise_provider_1.PromiseProvider.get().reject(error);
+  }
+}
