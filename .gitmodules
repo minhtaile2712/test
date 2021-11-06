@@ -1,3 +1,6 @@
 [submodule "nodejs/test-react/src/lib-tai"]
 	path = nodejs/test-react/src/lib-tai
 	url = https://github.com/minhtaile2712/react-components
+[submodule "react/test-react/src/tai-components"]
+	path = react/test-react/src/tai-components
+	url = https://github.com/minhtaile2712/react-components.git
